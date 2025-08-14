@@ -1,80 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<title>Skeuo-Themed Page</title>
 <style>
+/* Basic font + background */
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap');
+
+:root {
+  --bg-image: url('https://picsum.photos/1600/900') center/cover no-repeat;
+  --panel-radius: 5px;
+  --panel-gradient-top: #e0e0e0;
+  --panel-gradient-bottom: #c0c0c0;
+  --panel-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  --button-gradient-top: #f0f0f0;
+  --button-gradient-bottom: #d0d0d0;
+  --button-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  --text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
 body {
-    background-color: #1c1c1c;
-    font-family: Segoe UI, sans-serif;
-    color: #000;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-image);
+  color: #111;
 }
 
-/* Container for the static window */
-.win7-window {
-    width: 500px;
-    border-radius: 5px;
-    border: 1px solid black; /* Outside black outline */
-    overflow: hidden;
-    background-color: #f0f0f0;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+/* Main container */
+.container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
 }
 
-/* Top title bar */
-.win7-title {
-    height: 32px;
-    background: linear-gradient(to bottom, #98B4D0 0%, #B9D1EA 100%);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    position: relative;
-    box-sizing: border-box;
-    padding-left: 10px;
-    line-height: 32px;
-    font-weight: bold;
-    color: white;
-    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5);
-    
-    /* White inner outline on top/left, cyan on right/bottom */
-    box-shadow:
-        inset 1px 0px 0px #ffffff,   /* left */
-        inset 0px 1px 0px #ffffff,   /* top */
-        inset -1px 0px 0px #28CFE4, /* right */
-        inset 0px -1px 0px #28CFE4; /* bottom */
+/* Panels / sections */
+.panel {
+  border-radius: var(--panel-radius);
+  background: linear-gradient(to bottom, var(--panel-gradient-top), var(--panel-gradient-bottom));
+  box-shadow: var(--panel-shadow);
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
-/* Blue edges at the bottom corners of title bar */
-.win7-title::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 8px;
-    height: 8px;
-    background-color: #B9D1EA;
+/* Buttons */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: var(--panel-radius);
+  background: linear-gradient(to bottom, var(--button-gradient-top), var(--button-gradient-bottom));
+  box-shadow: var(--button-shadow);
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  text-shadow: var(--text-shadow);
+  transition: all 0.2s ease;
 }
 
-.win7-title::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 8px;
-    height: 8px;
-    background-color: #B9D1EA;
+.button:hover {
+  filter: brightness(1.1);
 }
 
-/* Window content area */
-.win7-content {
-    padding: 15px;
+/* Simple menu bar */
+.menu {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
 }
+
+.menu-item {
+  padding: 5px 10px;
+  border-radius: var(--panel-radius);
+  background: linear-gradient(to bottom, var(--button-gradient-top), var(--button-gradient-bottom));
+  box-shadow: var(--button-shadow);
+  cursor: pointer;
+  text-shadow: var(--text-shadow);
+}
+
+.menu-item:hover {
+  filter: brightness(1.1);
+}
+
 </style>
 </head>
 <body>
 
-<div class="win7-window">
-    <div class="win7-title">My Window</div>
-    <div class="win7-content">
-        <p>This is the content inside your Windows 7 style static UI panel.</p>
-        <button>Example Button</button>
-    </div>
+<div class="container">
+  <div class="menu">
+    <div class="menu-item">Home</div>
+    <div class="menu-item">About</div>
+    <div class="menu-item">Contact</div>
+  </div>
+
+  <div class="panel">
+    <h2>Welcome!</h2>
+    <p>This is a skeuomorphic panel styled after SkeuoCord aesthetics. You can add buttons, text, images, etc.</p>
+    <button class="button">Click Me</button>
+  </div>
+
+  <div class="panel">
+    <h2>Another Section</h2>
+    <p>Use multiple panels to create sections with depth and soft shadows, maintaining the skeuomorphic look.</p>
+    <button class="button">Another Button</button>
+  </div>
 </div>
 
 </body>
