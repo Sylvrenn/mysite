@@ -1,122 +1,20 @@
-body {
-    margin: 0;
-    height: 100vh;
-    font-family: "Segoe UI", sans-serif;
-    background: url('https://upload.wikimedia.org/wikipedia/en/2/2d/Windows_7_Default_Wallpaper.jpg') no-repeat center center fixed;
-    background-size: cover;
-    user-select: none;
+function toggleStartMenu() {
+    const menu = document.getElementById("startMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
 }
 
-/* Desktop icons */
-.icon {
-    width: 80px;
-    text-align: center;
-    color: white;
-    position: relative;
-    display: inline-block;
-    margin: 20px;
-    cursor: pointer;
-}
-.icon img {
-    width: 48px;
-    height: 48px;
-}
-.icon span {
-    display: block;
-    font-size: 12px;
-    margin-top: 5px;
+function openWindow(id) {
+    document.getElementById(id).style.display = "block";
 }
 
-/* Window style - real Aero look */
-.window {
-    width: 350px;
-    background: rgba(255,255,255,0.25);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255,255,255,0.4);
-    border-radius: 6px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.6);
-    position: absolute;
-    top: 120px;
-    left: 120px;
-    display: none;
-}
-.title-bar {
-    background: linear-gradient(to bottom, rgba(200,225,255,0.8), rgba(140,180,230,0.6));
-    border-bottom: 1px solid rgba(255,255,255,0.5);
-    padding: 4px 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    font-weight: bold;
-    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
-}
-.title-bar .buttons button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-.content {
-    padding: 10px;
-    color: black;
-    background: rgba(255,255,255,0.6);
+function closeWindow(id) {
+    document.getElementById(id).style.display = "none";
 }
 
-/* Taskbar */
-.taskbar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background: linear-gradient(to top, #3a3a3a, #5a5a5a);
-    display: flex;
-    align-items: center;
-    padding: 0 8px;
-    color: white;
+// Clock
+function updateClock() {
+    const now = new Date();
+    document.getElementById("clock").textContent = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
 }
-.start-button {
-    display: flex;
-    align-items: center;
-    background: linear-gradient(to bottom, #4ba5ff, #0056a3);
-    border-radius: 4px;
-    padding: 4px 8px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-.start-button img {
-    height: 20px;
-    margin-right: 5px;
-}
-.taskbar-clock {
-    margin-left: auto;
-    font-size: 14px;
-}
-
-/* Start menu */
-.start-menu {
-    position: fixed;
-    bottom: 45px;
-    left: 8px;
-    width: 200px;
-    background: rgba(255,255,255,0.8);
-    backdrop-filter: blur(15px);
-    border-radius: 6px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    display: none;
-    padding: 10px;
-}
-.start-menu button {
-    width: 100%;
-    margin-top: 5px;
-    padding: 6px;
-    border: 1px solid #aaa;
-    border-radius: 4px;
-    cursor: pointer;
-    background: linear-gradient(to bottom, #fff, #ccc);
-}
-.start-menu button:hover {
-    background: linear-gradient(to bottom, #fff, #bbb);
-}
+setInterval(updateClock, 1000);
+updateClock();
