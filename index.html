@@ -1,89 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Windows 7 Web Desktop</title>
-<link rel="stylesheet" href="style.css">
+<style>
+body {
+    background-color: #1c1c1c;
+    font-family: Segoe UI, sans-serif;
+    color: #000;
+}
+
+/* Container for the static window */
+.win7-window {
+    width: 500px;
+    border-radius: 5px;
+    border: 1px solid black; /* Outside black outline */
+    overflow: hidden;
+    background-color: #f0f0f0;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Top title bar */
+.win7-title {
+    height: 32px;
+    background: linear-gradient(to bottom, #98B4D0 0%, #B9D1EA 100%);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 10px;
+    line-height: 32px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5);
+    
+    /* White inner outline on top/left, cyan on right/bottom */
+    box-shadow:
+        inset 1px 0px 0px #ffffff,   /* left */
+        inset 0px 1px 0px #ffffff,   /* top */
+        inset -1px 0px 0px #28CFE4, /* right */
+        inset 0px -1px 0px #28CFE4; /* bottom */
+}
+
+/* Blue edges at the bottom corners of title bar */
+.win7-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background-color: #B9D1EA;
+}
+
+.win7-title::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background-color: #B9D1EA;
+}
+
+/* Window content area */
+.win7-content {
+    padding: 15px;
+}
+</style>
 </head>
 <body>
-    <div class="desktop">
 
-        <!-- Desktop icons -->
-        <div class="icon" onclick="openWindow('about')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Folder_icon_Windows_7.png">
-            <span>About Me</span>
-        </div>
-        <div class="icon" onclick="openWindow('projects')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Windows7_PhotoViewer_Icon.png">
-            <span>Projects</span>
-        </div>
-        <div class="icon" onclick="openWindow('contact')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Windows7_Mail_Icon.png">
-            <span>Contact</span>
-        </div>
-
-        <!-- Windows -->
-        <div class="window" id="about">
-            <div class="title-bar">
-                <span class="title">About Me</span>
-                <div class="buttons">
-                    <button class="close" onclick="closeWindow('about')">×</button>
-                </div>
-            </div>
-            <div class="content">
-                <h2>Hi, I’m Me Mo</h2>
-                <p>This is my temporary personal site styled like Windows 7.</p>
-            </div>
-        </div>
-
-        <div class="window" id="projects">
-            <div class="title-bar">
-                <span class="title">Projects</span>
-                <div class="buttons">
-                    <button class="close" onclick="closeWindow('projects')">×</button>
-                </div>
-            </div>
-            <div class="content">
-                <ul>
-                    <li>Norton’s Job Rush</li>
-                    <li>Dandy’s World Fangame</li>
-                    <li>Klausina’s Daycare</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="window" id="contact">
-            <div class="title-bar">
-                <span class="title">Contact</span>
-                <div class="buttons">
-                    <button class="close" onclick="closeWindow('contact')">×</button>
-                </div>
-            </div>
-            <div class="content">
-                <p>Email: example@email.com</p>
-                <p>Twitter: @username</p>
-            </div>
-        </div>
-
-        <!-- Taskbar -->
-        <div class="taskbar">
-            <div class="start-button" onclick="toggleStartMenu()">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Windows_logo_-_2006.svg">
-                <span>Start</span>
-            </div>
-            <div class="taskbar-clock" id="clock"></div>
-        </div>
-
-        <!-- Start menu -->
-        <div class="start-menu" id="startMenu">
-            <h3>Welcome</h3>
-            <button onclick="openWindow('about')">About Me</button>
-            <button onclick="openWindow('projects')">Projects</button>
-            <button onclick="openWindow('contact')">Contact</button>
-        </div>
-
+<div class="win7-window">
+    <div class="win7-title">My Window</div>
+    <div class="win7-content">
+        <p>This is the content inside your Windows 7 style static UI panel.</p>
+        <button>Example Button</button>
     </div>
-<script src="script.js"></script>
+</div>
+
 </body>
 </html>
