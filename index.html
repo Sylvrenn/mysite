@@ -3,14 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windows 7 Style Site</title>
+    <title>Windows 7 Themed Site</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Desktop background -->
     <div class="desktop">
+
+        <!-- Taskbar -->
+        <div class="taskbar">
+            <div class="start-button">Start</div>
+            <div class="taskbar-items">
+                <span>About</span>
+                <span>Gallery</span>
+                <span>Contact</span>
+            </div>
+            <div class="taskbar-clock">🕒 12:45 PM</div>
+        </div>
+
+        <!-- About Window -->
         <div class="window">
             <div class="title-bar">
-                <span class="title">Welcome</span>
+                <span class="title">About</span>
                 <div class="buttons">
                     <button class="min">–</button>
                     <button class="max">□</button>
@@ -18,10 +32,28 @@
                 </div>
             </div>
             <div class="content">
-                <h1>Hello!</h1>
-                <p>This is a Windows 7–style personal site on GitHub Pages.</p>
+                <h2>Welcome to my Website!</h2>
+                <p>This is a temporary personal site styled after Windows 7’s Aero theme.</p>
+                <button class="win7-button">Learn More</button>
             </div>
         </div>
+
+        <!-- Gallery Window -->
+        <div class="window">
+            <div class="title-bar">
+                <span class="title">Gallery</span>
+                <div class="buttons">
+                    <button class="min">–</button>
+                    <button class="max">□</button>
+                    <button class="close">×</button>
+                </div>
+            </div>
+            <div class="content">
+                <img src="https://upload.wikimedia.org/wikipedia/en/2/2d/Windows_7_Default_Wallpaper.jpg" alt="Wallpaper" style="width:100%;border-radius:5px;">
+            </div>
+        </div>
+
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
