@@ -1,59 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windows 7 Themed Site</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Windows 7 Web Desktop</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Desktop background -->
     <div class="desktop">
+
+        <!-- Desktop icons -->
+        <div class="icon" onclick="openWindow('about')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Folder_icon_Windows_7.png">
+            <span>About Me</span>
+        </div>
+        <div class="icon" onclick="openWindow('projects')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Windows7_PhotoViewer_Icon.png">
+            <span>Projects</span>
+        </div>
+        <div class="icon" onclick="openWindow('contact')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Windows7_Mail_Icon.png">
+            <span>Contact</span>
+        </div>
+
+        <!-- Windows -->
+        <div class="window" id="about">
+            <div class="title-bar">
+                <span class="title">About Me</span>
+                <div class="buttons">
+                    <button class="close" onclick="closeWindow('about')">×</button>
+                </div>
+            </div>
+            <div class="content">
+                <h2>Hi, I’m Me Mo</h2>
+                <p>This is my temporary personal site styled like Windows 7.</p>
+            </div>
+        </div>
+
+        <div class="window" id="projects">
+            <div class="title-bar">
+                <span class="title">Projects</span>
+                <div class="buttons">
+                    <button class="close" onclick="closeWindow('projects')">×</button>
+                </div>
+            </div>
+            <div class="content">
+                <ul>
+                    <li>Norton’s Job Rush</li>
+                    <li>Dandy’s World Fangame</li>
+                    <li>Klausina’s Daycare</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="window" id="contact">
+            <div class="title-bar">
+                <span class="title">Contact</span>
+                <div class="buttons">
+                    <button class="close" onclick="closeWindow('contact')">×</button>
+                </div>
+            </div>
+            <div class="content">
+                <p>Email: example@email.com</p>
+                <p>Twitter: @username</p>
+            </div>
+        </div>
 
         <!-- Taskbar -->
         <div class="taskbar">
-            <div class="start-button">Start</div>
-            <div class="taskbar-items">
-                <span>About</span>
-                <span>Gallery</span>
-                <span>Contact</span>
+            <div class="start-button" onclick="toggleStartMenu()">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Windows_logo_-_2006.svg">
+                <span>Start</span>
             </div>
-            <div class="taskbar-clock">🕒 12:45 PM</div>
+            <div class="taskbar-clock" id="clock"></div>
         </div>
 
-        <!-- About Window -->
-        <div class="window">
-            <div class="title-bar">
-                <span class="title">About</span>
-                <div class="buttons">
-                    <button class="min">–</button>
-                    <button class="max">□</button>
-                    <button class="close">×</button>
-                </div>
-            </div>
-            <div class="content">
-                <h2>Welcome to my Website!</h2>
-                <p>This is a temporary personal site styled after Windows 7’s Aero theme.</p>
-                <button class="win7-button">Learn More</button>
-            </div>
-        </div>
-
-        <!-- Gallery Window -->
-        <div class="window">
-            <div class="title-bar">
-                <span class="title">Gallery</span>
-                <div class="buttons">
-                    <button class="min">–</button>
-                    <button class="max">□</button>
-                    <button class="close">×</button>
-                </div>
-            </div>
-            <div class="content">
-                <img src="https://upload.wikimedia.org/wikipedia/en/2/2d/Windows_7_Default_Wallpaper.jpg" alt="Wallpaper" style="width:100%;border-radius:5px;">
-            </div>
+        <!-- Start menu -->
+        <div class="start-menu" id="startMenu">
+            <h3>Welcome</h3>
+            <button onclick="openWindow('about')">About Me</button>
+            <button onclick="openWindow('projects')">Projects</button>
+            <button onclick="openWindow('contact')">Contact</button>
         </div>
 
     </div>
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
