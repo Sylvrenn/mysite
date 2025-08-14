@@ -1,20 +1,101 @@
-function toggleStartMenu() {
-    const menu = document.getElementById("startMenu");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
+/* ================================
+   SKEUOMORPHIC UI STYLE PRESETS
+   Author: You
+   ================================ */
+
+:root {
+  --accent-blue-top: #98B4D0;
+  --accent-blue-bottom: #B9D1EA;
+  --panel-bg-top: #E0E0E0;
+  --panel-bg-bottom: #C0C0C0;
+  --button-bg-top: #F0F0F0;
+  --button-bg-bottom: #D0D0D0;
+  --text-color: #111;
+  --shadow-dark: rgba(0,0,0,0.4);
+  --shadow-light: rgba(255,255,255,0.3);
+  --border-radius: 5px;
+  --panel-padding: 15px;
+  --button-padding: 10px 20px;
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-function openWindow(id) {
-    document.getElementById(id).style.display = "block";
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background: linear-gradient(to bottom, #C0D4EA, #E8EDF5);
+  color: var(--text-color);
 }
 
-function closeWindow(id) {
-    document.getElementById(id).style.display = "none";
+.panel {
+  background: linear-gradient(to bottom, var(--panel-bg-top), var(--panel-bg-bottom));
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px var(--shadow-dark), inset 0 2px 2px var(--shadow-light);
+  padding: var(--panel-padding);
+  margin: 20px;
+  border: 1px solid #888;
 }
 
-// Clock
-function updateClock() {
-    const now = new Date();
-    document.getElementById("clock").textContent = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+.panel-header {
+  background: linear-gradient(to bottom, var(--accent-blue-top), var(--accent-blue-bottom));
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  padding: 5px 10px;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.4);
 }
-setInterval(updateClock, 1000);
-updateClock();
+
+.button {
+  background: linear-gradient(to bottom, var(--button-bg-top), var(--button-bg-bottom));
+  border-radius: var(--border-radius);
+  border: 1px solid #888;
+  padding: var(--button-padding);
+  cursor: pointer;
+  box-shadow: 0 2px 4px var(--shadow-dark), inset 0 1px 1px var(--shadow-light);
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  background: linear-gradient(to bottom, #e6e6e6, #bfbfbf);
+  box-shadow: 0 3px 6px var(--shadow-dark), inset 0 1px 1px var(--shadow-light);
+}
+
+.sidebar {
+  background: linear-gradient(to bottom, #F5F5F5, #DCDCDC);
+  border-radius: var(--border-radius);
+  padding: 15px;
+  box-shadow: inset 0 1px 2px var(--shadow-light), 0 2px 4px var(--shadow-dark);
+  margin: 20px;
+}
+
+.section {
+  background: linear-gradient(to bottom, #FFF, #EEE);
+  border-radius: var(--border-radius);
+  padding: var(--panel-padding);
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px var(--shadow-dark), inset 0 1px 1px var(--shadow-light);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-family);
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
+
+p {
+  line-height: 1.5;
+}
+
+.flex {
+  display: flex;
+  gap: 10px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rounded {
+  border-radius: var(--border-radius);
+}
