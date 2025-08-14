@@ -1,108 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Skeuo-Themed Page</title>
-<style>
-/* Basic font + background */
-@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap');
-
-:root {
-  --bg-image: url('https://picsum.photos/1600/900') center/cover no-repeat;
-  --panel-radius: 5px;
-  --panel-gradient-top: #e0e0e0;
-  --panel-gradient-bottom: #c0c0c0;
-  --panel-shadow: 0 4px 8px rgba(0,0,0,0.4);
-  --button-gradient-top: #f0f0f0;
-  --button-gradient-bottom: #d0d0d0;
-  --button-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  --text-shadow: 0 1px 1px rgba(0,0,0,0.3);
-}
-
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: var(--bg-image);
-  color: #111;
-}
-
-/* Main container */
-.container {
-  max-width: 1200px;
-  margin: 50px auto;
-  padding: 20px;
-}
-
-/* Panels / sections */
-.panel {
-  border-radius: var(--panel-radius);
-  background: linear-gradient(to bottom, var(--panel-gradient-top), var(--panel-gradient-bottom));
-  box-shadow: var(--panel-shadow);
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-/* Buttons */
-.button {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: var(--panel-radius);
-  background: linear-gradient(to bottom, var(--button-gradient-top), var(--button-gradient-bottom));
-  box-shadow: var(--button-shadow);
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  text-shadow: var(--text-shadow);
-  transition: all 0.2s ease;
-}
-
-.button:hover {
-  filter: brightness(1.1);
-}
-
-/* Simple menu bar */
-.menu {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.menu-item {
-  padding: 5px 10px;
-  border-radius: var(--panel-radius);
-  background: linear-gradient(to bottom, var(--button-gradient-top), var(--button-gradient-bottom));
-  box-shadow: var(--button-shadow);
-  cursor: pointer;
-  text-shadow: var(--text-shadow);
-}
-
-.menu-item:hover {
-  filter: brightness(1.1);
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Skeuo Site</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="container">
-  <div class="menu">
-    <div class="menu-item">Home</div>
-    <div class="menu-item">About</div>
-    <div class="menu-item">Contact</div>
-  </div>
-
+  
+  <!-- Header / Title -->
   <div class="panel">
-    <h2>Welcome!</h2>
-    <p>This is a skeuomorphic panel styled after SkeuoCord aesthetics. You can add buttons, text, images, etc.</p>
-    <button class="button">Click Me</button>
+    <div class="panel-header">Welcome Panel</div>
+    <div class="section">
+      <p>Hello! This is a skeuomorphic section.</p>
+      <button class="button">Click me</button>
+    </div>
   </div>
 
-  <div class="panel">
-    <h2>Another Section</h2>
-    <p>Use multiple panels to create sections with depth and soft shadows, maintaining the skeuomorphic look.</p>
-    <button class="button">Another Button</button>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <p>Sidebar content here</p>
+    <button class="button">Another button</button>
   </div>
-</div>
+
+  <!-- Another panel -->
+  <div class="panel">
+    <div class="panel-header">Another Section</div>
+    <div class="section">
+      <p>This panel shows another area of your site.</p>
+    </div>
+  </div>
 
 </body>
 </html>
